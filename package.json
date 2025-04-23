@@ -1,0 +1,31 @@
+{
+    "name": "zod",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo 'Run individual topics: pnpm test:primitive'",
+        "test:primitive": "ts-node src/primitive.ts",
+        "test:complex": "ts-node src/complex.ts",
+        "test:customized": "ts-node src/customized.ts",
+        "test:strings": "ts-node src/strings.ts",
+        "test:numbers": "ts-node src/numbers.ts",
+        "test:booleans": "ts-node src/booleans.ts",
+        "test:objects": "ts-node src/objects.ts",
+        "test:arrays": "ts-node src/arrays.ts",
+        "test:wrappers": "ts-node src/wrappers.ts",
+        "test:pipeline": "ts-node src/pipeline.ts",
+        "test:advanced": "ts-node src/advanced.ts",
+        "test:additional": "ts-node src/additional.ts",
+        "test:safe-parse": "ts-node src/safe-parse.ts"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "packageManager": "pnpm@10.9.0",
+    "dependencies": {
+        "ts-node": "^10.9.2",
+        "typescript": "^5.8.3",
+        "zod": "^3.25.7"
+    }
+}
