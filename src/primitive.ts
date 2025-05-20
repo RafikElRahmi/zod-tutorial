@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { testValue } from "./utils/testSchema";
 
 /**
  * A Zod schema for validating string values.
@@ -72,19 +73,8 @@ const voidSchema = z.void();
  */
 const neverSchema = z.never();
 
-const testValue = (schema: z.ZodSchema, value: any) => {
-    try {
-        const result = schema.parse(value);
-        console.log(`Value: ${value}, Result: ${result}`);
-        return true;
-    } catch (e) {
-        console.error(`Value: ${value}, Error: ${e}`);
-        return false;
-    }
-};
-
 // Success: returns "Hello"
-// console.log(testValue(stringSchema, "Hello"));
+console.log(testValue(stringSchema, "Hello"));
 
 // Success: returns 123
 console.log(testValue(numberSchema, 123));
@@ -117,6 +107,7 @@ console.log(testValue(dateSchema, Date.now()));
 console.log(testValue(dateSchema, null));
 
 // Success: returns BigInt(123)
+//@ts-ignore
 console.log(testValue(bigintSchema, BigInt("9007199254740991")));
 
 // Fail: Error: Expected bigint, received number
@@ -126,6 +117,7 @@ console.log(testValue(bigintSchema, 123));
 console.log(testValue(bigintSchema, "123"));
 
 // Success: returns the Symbol
+//@ts-ignore
 console.log(testValue(symbolSchema, Symbol("test")));
 
 // Fail: Error: Expected symbol, received string
