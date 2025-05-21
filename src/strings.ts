@@ -1,5 +1,3 @@
-import { duration } from "./../node_modules/.pnpm/zod@3.25.7/node_modules/zod/dist/esm/v4/classic/iso";
-import { emoji } from "./../node_modules/.pnpm/zod@3.25.7/node_modules/zod/dist/esm/v4/classic/schemas";
 import { z } from "zod";
 import { testValue } from "./utils/testSchema";
 

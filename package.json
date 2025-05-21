@@ -7,7 +7,8 @@
         "test:primitive": "ts-node src/primitive.ts",
         "test:complex": "ts-node src/complex.ts",
         "test:customized": "ts-node src/customized.ts",
-        "test:strings": "ts-node src/strings.ts"
+        "test:strings": "ts-node src/strings.ts",
+        "test:numbers": "ts-node src/numbers.ts"
     },
     "keywords": [],
     "author": "",
