@@ -10,7 +10,8 @@
         "test:strings": "ts-node src/strings.ts",
         "test:numbers": "ts-node src/numbers.ts",
         "test:booleans": "ts-node src/booleans.ts",
-        "test:objects": "ts-node src/objects.ts"
+        "test:objects": "ts-node src/objects.ts",
+        "test:arrays": "ts-node src/arrays.ts"
     },
     "keywords": [],
     "author": "",
