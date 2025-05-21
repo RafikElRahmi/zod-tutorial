@@ -81,7 +81,7 @@ const recordSchema = z.record(z.string(), z.number());
  * A Zod schema for validating lazy schemas.
  * validates a schema that references itself.
  */
-const lazySchema = z.lazy(() =>
+const lazySchema = z.lazy<any>(() =>
     z.object({
         name: z.string(),
         children: z.array(lazySchema),
