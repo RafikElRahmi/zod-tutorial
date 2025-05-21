@@ -4,7 +4,7 @@ import { ColorsEnum } from "./utils/enum";
 
 /**
  * A Zod schema for validating objects with a specific structure.
- * Accepts any valid object.
+ * validates onbject implementation
  */
 const objectSchema = z.object({
     name: z.string(),
@@ -16,37 +16,37 @@ const objectSchema = z.object({
 
 /**
  * A Zod schema for validating array values.
- * Accepts any valid array.
+ * validate array implementation
  */
 const arraySchema = z.array(z.string());
 
 /**
  * A Zod schema for validating tuples.
- * Accepts a tuple with a string and a number.
+ * Validates an array with a fixed number of elements with specific schemas.
  */
 const tupleSchema = z.tuple([z.string(), z.number()]);
 
 /**
  * A Zod schema for validating enums.
- * Accepts a specific set of string values.
+ * validate value if it is one of the specified array values.
  */
 const enumSchema = z.enum(["red", "green", "blue"]);
 
 /**
  * A Zod schema for validating enums.
- * Accepts a value of specific enum.
+ * validate value if it is one of the specified enum values.
  */
 const nativeEnumSchema = z.nativeEnum(ColorsEnum);
 
 /**
  * A Zod schema for validating literal values.
- * Accepts a specific string value.
+ * Validates that the value is the same.
  */
 const literalSchema = z.literal("hello");
 
 /**
  * A Zod schema for validating unions.
- * Accepts either a string or a number.
+ * validates that the value is one or both of the specified schemas.
  */
 const unionSchema = z.union([
     z.object({ name: z.string() }),
@@ -55,7 +55,7 @@ const unionSchema = z.union([
 
 /**
  * A Zod schema for validating intersections.
- * Accepts an object that satisfies both schemas.
+ * validates that the value is both of the specified schemas.
  */
 const intersectionSchema = z.intersection(
     z.object({ name: z.string() }),
@@ -64,7 +64,7 @@ const intersectionSchema = z.intersection(
 
 /**
  * A Zod schema for validating discriminated unions.
- * Accepts either a "cat" or "dog" object.
+ * validates that the value is one of the specified schemas with a common property.
  */
 const discriminatedUnionSchema = z.discriminatedUnion("type", [
     z.object({ type: z.literal("cat"), meow: z.boolean() }),
@@ -73,13 +73,13 @@ const discriminatedUnionSchema = z.discriminatedUnion("type", [
 
 /**
  * A Zod schema for validating records.
- * Accepts an object with string keys and number values.
+ * Validates the keys and values of an object.
  */
 const recordSchema = z.record(z.string(), z.number());
 
 /**
  * A Zod schema for validating lazy schemas.
- * Accepts a schema that references itself.
+ * validates a schema that references itself.
  */
 const lazySchema = z.lazy(() =>
     z.object({
@@ -90,31 +90,31 @@ const lazySchema = z.lazy(() =>
 
 /**
  * A Zod schema for validating promises.
- * Accepts a promise that resolves to a string.
+ * validtes a  promise return value.
  */
 const promiseSchema = z.promise(z.string());
 
 /**
  * A Zod schema for validating sets.
- * Accepts a set of strings.
+ * validates a Set of schema values.
  */
 const setSchema = z.set(z.string());
 
 /**
  * A Zod schema for validating maps.
- * Accepts a map with string keys and number values.
+ * validates a Map of schema keys & values.
  */
 const mapSchema = z.map(z.string(), z.number());
 
 /**
  * A Zod schema for validating functions.
- * Accepts a function that takes a string and returns a number.
+ * validates a function with a specific signature.
  */
 const functionSchema = z.function(z.tuple([z.string()]));
 
 /**
  * A Zod schema for validating instances of a specific class.
- * Accepts an instance of the `Date` class.
+ * validates instance if created from a specific class.
  */
 const instanceSchema = z.instanceof(Date);
 
