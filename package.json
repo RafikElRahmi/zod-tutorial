@@ -5,7 +5,8 @@
     "main": "index.js",
     "scripts": {
         "test:primitive": "ts-node src/primitive.ts",
-        "test:complex": "ts-node src/complex.ts"
+        "test:complex": "ts-node src/complex.ts",
+        "test:customized": "ts-node src/customized.ts"
     },
     "keywords": [],
     "author": "",
